@@ -1,6 +1,7 @@
 package com.example.lukas
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -45,11 +46,15 @@ class RegistrationInfo : AppCompatActivity() {
             DatePickerDialog(this,datePicker,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show()
         }
 
-
         btnFinish.setOnClickListener {
             val rFirst=firstName.text.toString()
             val rLast=lastName.text.toString()
             val rDate=date.text.toString()
+
+            val finish= Intent(this,MainPage::class.java)
+            startActivity(finish)
+            finish()
+
 
         }
     }

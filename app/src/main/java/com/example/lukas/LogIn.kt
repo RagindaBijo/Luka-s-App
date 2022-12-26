@@ -6,20 +6,28 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.core.view.isEmpty
-import com.example.lukas.databinding.ActivityMainBinding
+import com.example.lukas.databinding.ActivityLoginBinding
+import com.example.lukas.fragments.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 import kotlin.time.measureTimedValue
 
 class LogIn : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        if (FirebaseAuth.getInstance().currentUser != null) {
+            val intent = Intent(this, MainPage::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
         supportActionBar?.hide()
-        binding=ActivityMainBinding.inflate(layoutInflater)
+        binding=ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val email=binding.loginEmail
@@ -56,6 +64,7 @@ class LogIn : AppCompatActivity() {
         signInBtn.setOnClickListener {
             val intent=Intent(this,SignUp::class.java)
             startActivity(intent)
+            finish()
         }
 
 

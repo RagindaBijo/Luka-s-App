@@ -10,4 +10,7 @@
     <color name="orange">#FF3D00</color>
     <color name="red">#C20505</color>
     <color name="green">#13AE02</color>
+    <color name="blue">#00AFFF</color>
+    <color name="dark_blue">#023953</color>
+    <color name="frame">#014E4E</color>
 </resources>

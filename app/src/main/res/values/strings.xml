@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Luka\'s</string>
+
+    <string-array name="gender">
+        <item>Women</item>
+        <item>Men</item>
+        <item>Everyone</item>
+    </string-array>
 </resources>

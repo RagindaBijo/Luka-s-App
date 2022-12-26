@@ -42,7 +42,7 @@ class SignUp : AppCompatActivity() {
                     .createUserWithEmailAndPassword(rRegEmail,rRegPassword)
                     .addOnCompleteListener {task->
                         if (task.isSuccessful){
-                            val register= Intent(this,MainPage::class.java)
+                            val register= Intent(this,RegistrationInfo::class.java)
                             startActivity(register)
                             finish()
                         }else{
